@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+body {
+	background: url('/img/login/login_bg.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+
+.login-container {
+	position: relative;
+	width: 800px; height: 420px;
+	margin: 220px auto 0;
+	background: #fff;
+	box-shadow: rgba(0,0,0, 0.1) 0px 10px 30px;
+	}
+
+.login-container .half {
+	float: left;
+	width: 50%; height: 100%;
+	padding: 40px 40px 0 40px;
+	overflow: hidden;
+	}
+.login-container h1.logo {position: absolute; top: -58px;}
+.login-container h2 {
+	font-size: 18px; color: #222; letter-spacing: 0px; text-align: center; font-weight: bold;
+	text-transform: uppercase;
+	}
+
+.login-container .content label:first-of-type, .login-container .content input:first-of-type, .login-container .content .more:first-of-type {
+	animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+	}
+.login-container .content label:nth-of-type(2), .login-container .content input:nth-of-type(2), .login-container .content .more:nth-of-type(2) {
+	animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+	}
+.login-container .content label:nth-of-type(3), .login-container .content input:nth-of-type(3), .login-container .content .more:nth-of-type(3) {
+	animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+	}
+.login-container .content label {
+	font-size: 12px; color: #263238;
+/*user-select:none 속성은 해당요소의 드레그, 더블클릭, 블럭지정을 막는다.*/
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	}
+.login-container .content label:not([for='remember']) {display: none;}
+
+.login-container .content input.inpt {
+	display: block;
+	width: 100%; height: 42px;
+	margin-bottom: 12px;
+	font-size: 14px; color: #222;
+	}
+.login-container .content input.inpt::-webkit-input-placeholder {font-size: 14px; color: #bbb;}
+.login-container .content input.inpt:-moz-placeholder {font-size: 14px; color: #bbb;}
+.login-container .content input.inpt::-moz-placeholder {font-size: 14px; color: #bbb;}
+.login-container .content input.inpt:-ms-input-placeholder {font-size: 14px; color: #bbb;}
+
+.login-container .content .submit {
+	display: block;
+	width: 100%; height: 50px;
+	font-size: 14px; color: #fff; letter-spacing: 0.5px; line-height: 47px; text-align: center; vertical-align: middle;
+	text-transform: uppercase;
+	border: 1px solid #185da3;
+	border-radius: 4px;
+	background: #1969b9;
+	cursor: pointer;
+	transition: all 0.2s;
+	}
+.login-container .content .submit:hover {border-color: #4f98e0; background: #549feb;}
+
+.login-container .content .checkbox {
+	display: none;	/* Firefox 출력 처리 */ 
+	clip: rect(0 0 0 0);
+	width: 0; height: 0;
+	margin: 17px -1px; margin-top: 4px; padding: 0;
+	border: 0;	
+	overflow: hidden;
+	}
+.login-container .content .checkbox + label {
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+	}
+.login-container .content .checkbox + label:before {
+	content: "\A";
+	display: inline-block;
+	position: relative;
+	width: 15px; height: 15px;
+	margin: -2px 8px 0 0;
+	font-family: Verdana; font-size: 12px; color: #2196F3; line-height: 10px; text-align: center; vertical-align: middle; font-weight: bold;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+	background: transparent;	
+	}
+.login-container .content .checkbox:checked + label:before {content: "✓";}
+
+.login-container .content .submit-wrap {position: absolute; top: 160px; width: 100%;}
+.login-container .content .submit-wrap span.txt {
+	display: block;
+	margin: 25px 0 0 0;
+	font-size: 12px; color: #999; line-height: 150%; text-align: left;
+	}
+.login-container .content .submit-wrap span.txt u {color: #e05555; text-decoration: none;}
+.login-container .content .cont {position: relative;}
+
+@keyframes slideIn {
+  0% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    margin-left: -320px;
+  }
+  100% {
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+.footer {
+	width: 800px;
+	margin: 0 auto; padding: 15px 0 0 0;
+	font-size: 12px; color: rgba(255,255,255, 0.35); letter-spacing: 0; text-align: center;
+	}
+
+.login-container .half.thumbs {position: relative; padding: 0; overflow: hidden;}
+.login-container .half.thumbs video {
+	position: absolute; top: 0; left: -80px;
+	width: auto; height: 100%;
+	}

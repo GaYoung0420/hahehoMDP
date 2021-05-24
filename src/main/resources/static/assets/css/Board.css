@@ -1,0 +1,475 @@
+@charset "UTF-8";
+
+/********************************************************************************************************************************
+* 공통 Style
+********************************************************************************************************************************/
+/*----- Box --------------------------------------------------*/
+.guide-infoBox {
+	margin: 60px 0 -30px 0; padding: 14px 20px 15px 20px;
+	border: 1px solid #d4dde8;
+	border-radius: 3px;
+	background: #f4f7fa;
+	box-sizing: border-box;
+	}
+.guide-infoBox li {
+	margin: 0 0 2px 0; padding: 0 0 0 8px;
+	font-size: 11px; line-height: 140%; color: #777;
+	background: url('/CUG/img/ic_dot1_org.gif') no-repeat 0 7px;
+	}
+.guide-infoBox li:last-child {margin-bottom: 0;}
+.guide-infoBox li.none {padding: 0; background: none;}
+
+.box-item {
+	display: block;
+	margin: 0 0 20px 0; padding: 12px 15px 12px 15px;
+	line-height: 120%;
+	border: 1px solid #c9c9c9;
+	background: #fafafa;
+	}
+.box-item i {margin: 0 5px 2px 0; vertical-align: middle;}
+.box-item span.word {	
+	display: inline-block;
+	position: relative;
+	margin: 0 20px 0 0;
+	font-size: 14px; font-weight: bold;
+	}
+.box-item span.word::before {
+	content: ">";
+	position: absolute; top: 2px; right: -13px;
+	font-size: 13px; font-weight: 300;
+	}
+.box-item span.word:last-child::before {display: none;}
+
+
+/*----- Tabs --------------------------------------------------*/
+.body-tabs {margin: 0 0 20px 0; overflow: hidden;}
+.body-tabs .nav-tabs {border-bottom: 1px solid #ccc;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-color: #ccc; border-bottom-color: transparent;}
+.body-tabs .nav-tabs .active a {color: #222; font-weight: bold;}
+.body-tabs .nav-tabs > li > a {padding: 10px 25px;}
+
+
+/********************************************************************************************************************************
+* 공통 Board(Table) Style
+********************************************************************************************************************************/
+.table {margin: 0;}
+.table.bg-white {background-color: #fff;}
+.table th {
+	font-size: 13px; color: #748991; line-height: 110%; font-weight: bold; vertical-align: middle !important;
+	word-break: break-all;
+	background: #ecf6fa;
+	}
+.table td {
+	line-height: 120%; vertical-align: middle !important;
+	word-break: break-all;
+	}
+.table td.editor		{padding: 10px !important;}
+.table td.ct			{text-align: center;}
+.table td.min-height	{padding-top: 14px; padding-bottom: 14px;}
+.table th.none, .table td.none		{padding-top: 0 !important; padding-bottom: 0 !important; line-height: 120%;}
+.table th.none2, .table td.none2	{padding: 0 !important; line-height: 120%;}
+.table td.text			{padding-top: 10px; padding-bottom: 12px;}
+.table td.text2			{padding-top: 16px; padding-bottom: 18px;}
+
+.table .file {display: inline-block; margin: 0 4px 0 0; vertical-align: middle;}
+.table .file:last-child {margin-right: 0;}
+.table .file img {width: 26px; height: auto;}
+
+.table tr.sum td		{background-color: #e7e7e7;}
+
+
+/*----- List --------------------------------------------------*/
+.table.List tr:hover td {color: #333; transition: all 0.3s;}
+.table.List th {
+	padding: 8px 8px 9px 8px;
+	font-size: 12px; text-align: center;
+	border-bottom-color: #ccc;
+	}
+.table.List th.bottomLine {border: 1px solid #ddd;}
+.table.List td {
+	padding: 15px 5px 15px 5px;
+	text-align: center;
+	}
+.table.List td.Left			{padding-left: 15px; padding-right: 15px; text-align: left;}
+.table.List td.subj			{padding-top: 10px; padding-bottom: 10px;}
+.table.List td.subj2		{padding-top: 5px; padding-bottom: 5px;}
+.table.List td.num			{font-size: 12px; color: #999;}
+.table.List td.gubun		{font-size: 12px; color: #3e9062 !important;}
+.table.List td.gubun2		{font-size: 12px; color: #555;}
+.table.List td.date, 
+.table.List td.count		{font-size: 12px; color: #999;}
+.table.List td.btns			{padding-top: 8px; padding-bottom: 8px;}
+.table.List td.manager		{color: #666699;}
+.table.List td.txt			{color: #777; line-height: 120%;}
+.table.List td.writer		{font-size: 12px; color: #444;}
+.table.List tr.notice td	{font-weight: bold;}
+
+.table.List.tbl-small td	{padding-top: 9px; padding-bottom: 9px;}
+
+.table.List td.input		{padding: 0 8px;}
+.table.List td.input .form-control {height: 30px;}
+
+/* List 데이터가 없을 경우 */
+.table.List tr.None {background: #fff !important;}
+.table.List td.list-data-None {padding: 25px 0 25px 0; font-size: 100%; color: #888 !important;}
+.table.List td.list-data-None span.default {
+	display: inline-block;
+	width: 30px; height: 27px;
+	margin: 0 5px 0 0;
+	vertical-align: middle;
+	background: url('/CUG/img/list_data_None_icon.png') no-repeat 0 0;
+	}
+/* 검색결과 없을 경우 */
+.table.List td.list-search-None {padding: 30px 0 25px 0;}
+.table.List td.list-search-None .text {
+	display: inline-block;
+	font-size: 100%; text-align: left; line-height: 150%;
+	overflow: hidden;
+	}
+.table.List td.list-search-None .text .img {
+	float: left;
+	display: inline-block;
+	width: 42px; height: 45px;
+	margin: 0 13px 0 0;
+	background: url('/CUG/img/searchResult_No.gif') no-repeat 0 0;
+	}
+.table.List td.list-search-None .text .txt {
+	float: left;
+	display: inline-block;
+	margin: 0px 0 0 0;
+	}
+
+/* 폴더형 */
+.table.List td.sub-list	{font-size: 12px; padding-top: 4px; padding-bottom: 6px;}
+.table.List td.sub-list	.doc {
+	display: inline-block;
+	min-height: 14px;
+	padding: 0 0 0 16px;
+	background: url('/CUG/img/acc_list_ic_01.png') no-repeat 0 3px;
+	background-size: auto 11px;
+	}
+.table.List td.sub-list	.folder {
+	display: inline-block;
+	min-height: 14px;
+	padding: 0 0 0 20px;
+	background: url('/CUG/img/acc_list_ic_02.png') no-repeat 0 2px;
+	background-size: auto 11px;
+	}
+.table.List td.sub-list .tab1 {margin: 0;}
+.table.List td.sub-list .tab2 {margin: 0 0 0 20px;}
+.table.List td.sub-list .tab3 {margin: 0 0 0 40px;}
+
+/* 이미지 */
+.table img.tbl-thumbs			{width: auto; height: 60px; margin: 2px 0;}
+.table img.tbl-thumbs.smaill	{width: auto; height: 45px; margin: 2px 0;}
+.table .file-thumbs {margin: 0 0 6px 0; overflow: hidden;}
+.table .file-thumbs img.tbl-thumbs {float: left; margin: 0 6px 0 0;}
+.table .file-thumbs .del {float: left; margin: 0 10px 0 0;}
+
+
+/*----- View --------------------------------------------------*/
+.table.View th.ct {text-align: center;}
+.table.View td {padding-top: 13px; padding-bottom: 14px;}
+.table.View td.subj {font-size: 14px;}
+.table.View td.detail {
+	padding-top: 20px; padding-bottom: 22px;
+	line-height: 170%;
+	}
+.table.View td.detail.row-one {padding-left: 20px; padding-righT: 20px;}
+.table.View td.detail p {
+	margin: 0 0 1.5em 0;
+	text-align: left; line-height: 170%; vertical-align: middle;
+	}
+.table.View td.detail img {
+	display: block;
+	max-width: 100%; height: auto;
+	margin: 1em 0;
+	}
+
+/* CK Editor 대하여 아이콘 hide 처리 */
+.cke_toolbar_last {display: none !important;}
+
+
+/*----- ETC --------------------------------------------------*/
+.lock-ic {
+	display: inline-block;
+	width: 22px; height: 22px;
+	margin: 0 0 2px 10px;
+	vertical-align: middle;
+	background: url('/CUG/img/lock3.png') no-repeat 0 0;
+	background-size: 22px;
+	}
+
+.banPos-num {
+	display: inline-block;
+	width: 22px; height: 22px;
+	font-size: 12px; color: #fff; line-height: 21px; text-align: center;
+	border-radius: 100%;
+	background-color: #e05555;
+	}
+
+/*----- Range Slider -----*/
+.contents-level-slider {
+	position: relative;
+	width: 400px;
+	}
+.contents-level-slider .slider {
+	position: relative;
+	-webkit-appearance: none;
+	width: 100%; height: 15px;
+	outline: none;
+	border-radius: 5px;
+	background: #d3d3d3;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	z-index: 10;
+	}
+.contents-level-slider .slider:hover {opacity: 1;}
+
+.contents-level-slider .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px; height: 25px;
+	border-radius: 100%;
+	background: #0000cc;
+	cursor: pointer;
+	}
+
+.contents-level-slider .slider::-moz-range-thumb {
+	width: 25px; height: 25px;
+	border-radius: 100%;
+	background: #0000cc;
+	cursor: pointer;
+	}
+
+.contents-level-slider ul {float: left; position: relative; width: 100%; z-index: 1;}
+.contents-level-slider li {
+	float: left;
+	position: relative;
+	padding: 0 0 12px 0;
+	font-size: 12px; color: #333; font-weight: bold; text-align: left;
+	box-sizing: border-box;
+	}
+.contents-level-slider li:last-child {text-align: right;}
+.contents-level-slider li::before {
+	content: "";
+	position: absolute; bottom: 0; left: 0%;
+	width: 1px; height: 8px;
+	background: #777;
+	}
+.contents-level-slider li:last-child::after {
+	content: "";
+	position: absolute; bottom: 0; right: 0%;
+	width: 1px; height: 8px;
+	background: #777;
+	}
+
+
+
+/********************************************************************************************************************************
+* Seacrh, Align, Pagination 등
+********************************************************************************************************************************/
+/*----- Seacrh --------------------------------------------------*/
+.Board-Search {
+	position: relative;
+	margin-bottom: 30px; padding-right: 215px !important;
+	border: 1px solid #dadada;
+	background-color: #fafafa;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0, 0.1);
+	}
+.Board-Search tr:first-child th, .Board-Search tr:first-child td {border-top: none !important;}
+.Board-Search th {color: #5f7b85;}
+.Board-Search th i {margin: 0 6px 2px 0;}
+.Board-Search td .btn {font-size: 11px;}
+.Board-Search td.date-select.f13 .btn {font-size: 13px;}
+
+.Board-Search input.word {width: 460px;}
+@media only screen and (min-width: 1300px) {
+	.Board-Search input.word		{transition: width 0.2s;}
+	.Board-Search input.word:focus	{width: 900px !important;}
+	}
+.Board-Search .sch-btn {position: absolute; top: 10px; bottom: 10px; right: 15px;}
+.Board-Search .sch-btn .btn {
+	position: relative; top: 0; bottom: 0;
+	width: 90px; height: 100%;
+	margin: 0 0 0 5px; padding: 0 0 2px 0;
+	font-size: 13px;
+	}
+.Board-Search .sch-btn .btn i {margin: 0 4px 2px 0; font-size: 12px;}
+
+
+/*----- Align --------------------------------------------------*/
+.Board-Count {
+	position: relative;
+	padding: 0 0 10px 0;
+	font-size: 14px; color: #337ab7;
+	overflow: hidden;
+	}
+.Board-Count .count {display: inline-block; margin: 4px 0 0 0;}
+.Board-Count .align {float: right;}
+.Board-Count .align select {
+    height: 22px;
+    padding: 0px 2px 0px 6px;
+    font-size: 11px; color: #fff; line-height: 100% !important;
+    vertical-align: middle;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+    border: 1px solid #959595;
+    background: #999;
+	}
+
+
+/*----- Pagination --------------------------------------------------*/
+.Board-pagination {
+	position: relative;
+	vertical-align: top; text-align: center;
+	overflow: hidden;
+	}
+/*
+.Board-pagination .pagination {margin: 0 0 15px 0;}
+*/
+.Board-pagination .pagination .Btn a i {display: inline-block; margin: -3px 0 0 0; font-size: 17px; line-height: 0;}
+
+.Board-pagination .page-count {float: left; margin: 0px 0 0 0; font-size: 15px; color: #337ab7; font-weight: bold;}
+.Board-pagination .page-count .number {color: #ff5529;}
+
+/* 게시판 하단 버튼 */
+.Board-pagination .Left  {float: Left; padding: 20px 0 0 0;}
+.Board-pagination .Right {float: Right; padding: 20px 0 0 0;}
+.Board-pagination .btn {
+	margin-left: 2px; padding: 7px 20px 9px 20px;
+	font-size: 14px; letter-spacing: -0.5px;
+	}
+
+
+/********************************************************************************************************************************
+* Button
+********************************************************************************************************************************/
+.Btns-wp {
+	clear: both;
+	position: relative;
+	margin: 20px 0 0 0;
+	overflow: hidden;
+	}
+.Btns-wp .Left	{float: left;}
+.Btns-wp .Right {float: Right;}
+.Btns-wp .Left .btn  {margin-right: 2px;}
+.Btns-wp .Right .btn {margin-left: 2px;}
+.Btns-wp .btn {
+	padding: 7px 20px 9px 20px;
+	font-size: 14px; letter-spacing: -0.5px;
+	}
+
+/*----- Theme Buttons ----*/
+.fileupload {margin: 0 !important}
+
+.btn-theme {color: #fff; border-color: #3f98c0; background-color: #43a4cf;}
+.btn-theme:hover,
+.btn-theme:focus,
+.btn-theme:active,
+.btn-theme.active,
+.open .dropdown-toggle.btn-theme {color: #fff; border-color: #48bcb4; background-color: #48bcb4;}
+
+.btn-theme02 {color: #fff; border-color: #967adc; background-color: #ac92ec;}
+.btn-theme02:hover,
+.btn-theme02:focus,
+.btn-theme02:active,
+.btn-theme02.active,
+.open .dropdown-toggle.btn-theme02 {color: #fff; border-color: #967adc; background-color: #967adc;}
+
+.btn-theme03 {color: #fff; border-color: #37bc9b; background-color: #48cfad;}
+.btn-theme03:hover,
+.btn-theme03:focus,
+.btn-theme03:active,
+.btn-theme03.active,
+.open .dropdown-toggle.btn-theme03 {color: #fff; border-color: #37bc9b; background-color: #37bc9b;}
+
+.btn-theme04 {color: #fff; border-color: #da4453; background-color: #ed5565;}
+.btn-theme04:hover,
+.btn-theme04:focus,
+.btn-theme04:active,
+.btn-theme04.active,
+.open .dropdown-toggle.btn-theme04 {color: #fff; border-color: #da4453; background-color: #da4453;}
+
+.btn-theme05 {color: #fff; border-color: #19626b; background-color: #1c717b;}
+
+.btn-clear-g {color: #48bcb4; background: transparent; border-color: #48bcb4;}
+.btn-clear-g:hover {color: white;}
+
+.btn-gray			{color: #fff !important; border-color: #999; background-color: #a4a4a4;}
+.btn-black			{color: #fff !important; border-color: #333; background-color: #444;}
+.btn-black:hover	{border-color: #444; background-color: #555;}
+
+.list-plus-btn {position: absolute; top: 15px; right: 15px;}
+.list-plus-btn .btn {width: 40px;}
+
+
+/********************************************************************************************************************************
+* Icon
+********************************************************************************************************************************/
+.new-icon {display: inline-block; margin: 0 0 2px 8px; vertical-align: middle;}
+
+.w30 {width: 30px;}
+.w45 {width: 45px;}
+.icon {
+	clear: both;
+	display: inline-block;
+	margin-bottom: 0; padding: 0px 5px 2px 5px;
+	font-size: 11px !important; line-height: 1.5; font-weight: 300;  text-align: center; vertical-align: middle;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	background-image: none;
+	pointer-events: none;
+	}
+.icon2 {
+	clear: both;
+	display: inline-block;
+	height: 16px;
+	margin-bottom: 0; padding: 0 5px;
+	font-size: 10px !important; line-height: 14px; font-weight: 300;  text-align: center; vertical-align: middle;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	background-image: none;
+	pointer-events: none;
+	}
+.hunryungGosi-kinds {margin: 0 8px 0 0;}
+.fileupload-ic {
+	display: inline-block;
+	margin: 0 4px 4px 0;
+	font-size: 11px; vertical-align: middle;
+	}
+
+
+/********************************************************************************************************************************
+* modal, popup
+********************************************************************************************************************************/
+/*----- modal --------------------------------------------------*/
+.modal-body.scroll-y {overflow-x: hidden; overflow-y: scroll;}
+
+/* CustomScrollbar */
+.mCustomScrollbar {overflow: auto;}
+
+
+/*----- Popup --------------------------------------------------*/
+.cug-popup-wp {position: relative;}
+.cug-popup-wp .pop-title {
+	position: relative;
+	height: 65px;
+	margin: 0 0 30px 0; padding: 0 0 3px 25px;
+	font-size: 19px; color: #fff; letter-spacing: -0.5px; font-weight: bold;
+	background-color: #22242a;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0, 0.2);
+	}
+.cug-popup-wp .pop-title .close {
+	display: block;
+	position: absolute; top: 50%; right: 15px;
+	width: 31px; height: 31px;
+	margin: -16px 0 0 0;
+	background: url('/CUG/img/close(w).png') no-repeat 0 0;
+	opacity: 0.3;
+	}
+.cug-popup-wp .pop-title .close:hover {opacity: 0.8;}
+.cug-popup-wp .cnt-wrap {clear: both; position: relative; padding: 0 25px; line-height: 150%;}
+.cug-popup-wp .cnt-wrap.pd-none {padding: 0;}
+
+.cug-popup-wp .Board-Search {padding-right: 120px !important;}
