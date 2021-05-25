@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,6 +32,11 @@ public class consults {
     private String contents;
     private Long parent;
     private int flagid;
+
+
+    @OneToOne
+    @JoinColumn(name = "counselor_id")
+    private counselors counselor;
 
     @CreationTimestamp
     private Date created_at;

@@ -12,7 +12,8 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface consultRepo extends JpaRepository<consults,Long>{
 
-    @Query(value= "SELECT *, (SELECT flagid FROM consults where parent = cs.id order by flagid desc LIMIT 1 ) AS gu FROM consults cs " +
+    @Query(value= "SELECT cs.*, (SELECT flagid FROM consults where parent = cs.id order by flagid desc LIMIT 1 ) AS gu, csl.nm FROM consults cs " +
+    " left outer join counselors csl on cs.counselor_id = csl.id "+
     " WHERE parent =0 and (title like %:title% or contents like %:contents% )", nativeQuery = true)
     Page<Map<String,Object>> getListByTitle( String title,  String contents, Pageable pageable);
 

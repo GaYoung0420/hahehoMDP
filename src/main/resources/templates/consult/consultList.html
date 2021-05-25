@@ -61,6 +61,7 @@
           <th>추가질의</th>
           <th>추가답변</th>
           <th>생성일</th>
+          <th>상담위원</th>
 
           <tr th:each="row : ${list}">
 
@@ -72,6 +73,7 @@
             <td ><span th:if="${row.gu} >= 3">체크</span></td>
             <td><span th:if="${row.gu} >= 4">체크</span></td>
             <td th:text="${row.updated_at}">search</td>
+            <td th:text="${row.nm}">상담자</td>
 
           </tr>
         </table>
