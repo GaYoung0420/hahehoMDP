@@ -20,7 +20,6 @@ import lombok.extern.slf4j.Slf4j;
  */
 
  @Service
- @Slf4j
 public class AdminService {
 
 
@@ -31,6 +30,7 @@ public class AdminService {
     @Autowired
     private PasswordEncoder pwEncoder;
 
+    //관리자 계정 생성
     public SecurityAdmins save(SecurityAdmins sa){
 
 
@@ -45,10 +45,18 @@ public class AdminService {
 
 
         sa.getRoles().add(sr);
-
-        log.info(sa.toString());
         return saRepo.save(sa);
     }
+
+    //비밀번호 변경
+    public SecurityAdmins update(SecurityAdmins sa){
+        String encodedpw = pwEncoder.encode(sa.getPassword());
+        sa.setPassword(encodedpw);
+        
+        return saRepo.save(sa);
+
+    }
+    
 
     public void sessionIns(HttpServletRequest request) {
 

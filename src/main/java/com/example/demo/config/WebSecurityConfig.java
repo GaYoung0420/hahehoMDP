@@ -30,7 +30,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/", "/assets/**", "/img/**").permitAll()
 				.antMatchers("/register").permitAll()
 				.antMatchers("/rest/*").permitAll()
-				.antMatchers("/consult/*").permitAll()
 				.antMatchers("/.well-known/pki-validation/*").permitAll()
 				.anyRequest().authenticated()
 				.and()
@@ -43,7 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.logout()
                 .logoutSuccessUrl("/?logout")
-				.permitAll();
+				.permitAll()
+                .and()
+            .csrf().disable();
 	}
 
     @Autowired

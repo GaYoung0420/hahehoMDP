@@ -38,6 +38,6 @@ public class SecurityAdmins {
         joinColumns = @JoinColumn(name = "admins_id"),
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    List<SecurityRole> roles = new ArrayList<>(); //null point error
+    List<SecurityRole> roles = new ArrayList<>(); //null point error    
     
 }
