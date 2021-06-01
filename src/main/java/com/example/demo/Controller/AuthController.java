@@ -72,6 +72,6 @@ public class AuthController {
     }
 
     public void test(){
-        //test1
+        //test1 - local - msk 
     }
 }
