@@ -6,7 +6,6 @@ import com.example.demo.DTO.SecurityAdmins;
 import com.example.demo.DTO.SecurityRole;
 import com.example.demo.Repository.saRepository;
 import com.example.demo.Repository.srRepository;
-import com.example.demo.Service.AdminService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
@@ -26,9 +25,6 @@ public class AuthController {
 
     @Autowired
     private srRepository srRepo;
-
-    @Autowired
-    private AdminService adminService;
 
     
 
@@ -54,7 +50,6 @@ public class AuthController {
 		} else {
             SecurityAdmins sa = saRepo.findById(id).orElse(null);
             model.addAttribute("SecurityAdmins", sa);
-            System.out.println("[auth] ----------->");
             model.addAttribute("userAuth", saRepo.strAuth(id));
 		}
 
@@ -70,7 +65,8 @@ public class AuthController {
     
     @PostMapping("/write")
     public String write(Model model, SecurityAdmins sa, RedirectAttributes redirect){
-        adminService.save(sa);
+        // adminService.save(sa);
+        saRepo.save(sa);
         redirect.addAttribute("id",sa.getId());
         return "redirect:write";
     }

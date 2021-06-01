@@ -5,15 +5,11 @@ import javax.servlet.http.HttpSession;
 
 import com.example.demo.DTO.SecurityAdmins;
 import com.example.demo.DTO.SecurityRole;
-import com.example.demo.Repository.adminRepository;
 import com.example.demo.Repository.saRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * AdminService

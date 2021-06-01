@@ -3,14 +3,14 @@
 
 <html lang="ko">
 
-<head th:replace="fragments/common_inc_top :: head('로그관리')">
+<head th:replace="fragments/common_inc_top :: head('권한')">
 </head>
 
 <body>
 
-    <header th:replace="fragments/common_inc_top :: menu('로그')"></header>
+    <header th:replace="fragments/common_inc_top :: menu('권한')"></header>
 
-    <aside id="sidebar" class="nav-collapse" th:replace="fragments/common_inc_top :: sidebar('로그')"></aside>
+    <aside id="sidebar" class="nav-collapse" th:replace="fragments/common_inc_top :: sidebar('권한')"></aside>
 
 
     <!-- *******************************************************************************************************************************
@@ -40,7 +40,7 @@
                         </colgroup>
                         <tr>
                             <th colspan="4" class="ct">
-                                <input type="text" name="username" th:field="*{username}">
+                                <input type="text" name="username" th:field="*{username}" readonly>
                                 <!-- <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
                                     error msg.
                                 </div> -->
@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                             <th>pw</th>
-                            <td><input type="text" name="password" id="password" th:field="*{password}"></td>
+                            <td><input type="text" th:name="password" id="password" placeholder=""></td>
                             <th>사용여부</th>
                             <td><input type="text" name="enabled" id="enabled" th:field="*{enabled}"></td>
                         </tr>
@@ -62,21 +62,19 @@
                                 <th:block th:each=" roleAll : ${AuthAll}">
 
 
-
                                             <label class="radio-field checkbox None tooltips" data-placement="right" >
                                                 <input type="checkbox" th:value="${roleAll.id}" name="roles" th:checked="${#strings.contains(userAuth,roleAll.id)}"/>
                                                 <span class="checkmark"></span>
                                             </label>
                                             <span th:text="${roleAll.name}">전체 권한</span>
-
+                                        
                                 </th:block>
 
-                                <a href="javascript:chgAuth();" class="btn btn-success">권한 변경</a>
+                                <!-- <a href="javascript:chgAuth();" class="btn btn-success">권한 변경</a> -->
 
 
                             </td>
                         </tr>
-
 
 
                     </table>
@@ -133,7 +131,7 @@
         var auth = ""
         var userid = $("#id").val();
 
-        $("input[name=roles]:checked").each(function () {
+        $("input[name=rolesID]:checked").each(function () {
             var chkVal = $(this).val();
 
             if (chkVal != "")

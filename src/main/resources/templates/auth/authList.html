@@ -57,7 +57,6 @@
           <th>username</th>
           <th>password</th>
           <th>enabled</th>
-          <th>auth</th>
 
           <tr th:each="row : ${list}">
 
@@ -65,7 +64,6 @@
             <td><a th:text="${row.username}" th:href="@{/auth/write(id=${row.id})}">username</a></td>
             <td th:text="${row.password}">pw</td>
             <td th:text="${row.enabled}">pw</td>
-            <td th:each=" role : ${row.roles}" ><span th:text="${role.name}"></span></td>
 
           </tr>
         </table>
