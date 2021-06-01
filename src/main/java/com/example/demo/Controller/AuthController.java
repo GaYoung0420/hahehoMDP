@@ -71,4 +71,7 @@ public class AuthController {
         return "redirect:write";
     }
 
+    public void test(){
+        
+    }
 }
