@@ -9,6 +9,7 @@ import com.example.demo.Repository.srRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +27,10 @@ public class AuthController {
     @Autowired
     private srRepository srRepo;
 
+    @Autowired
+    private PasswordEncoder pwEncoder;
     
+
 
     @GetMapping("list")
     public String list(Model model, Pageable pageable){
@@ -66,17 +70,13 @@ public class AuthController {
     @PostMapping("/write")
     public String write(Model model, SecurityAdmins sa, RedirectAttributes redirect){
         // adminService.save(sa);
+        String encodedpw = pwEncoder.encode(sa.getPassword());
+        sa.setPassword(encodedpw);
+
         saRepo.save(sa);
         redirect.addAttribute("id",sa.getId());
         return "redirect:write";
     }
 
-    public void test(){
-        //test1 - local - msk 123123
-        //test1 - local - msk 123123
-        //test1 - local - msk 123123
-        //test1 - local - msk 123123
-        //test1 - local - msk 123123
-        //test1 - local - msk 123123
-    }
+
 }
