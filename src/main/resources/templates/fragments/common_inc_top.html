@@ -59,6 +59,7 @@
 				<li><a href="#" th:href="@{/auth/list}" th:classappend="${menu} == '권한' ? 'active' ">header: 권한 관리</a></li>
 				<li><a href="#" th:href="@{/board/list}" th:classappend="${menu} == '로그' ? 'active' ">header: 로그 관리</a></li>
 				<li><a href="#" th:href="@{/consult/list}" th:classappend="${menu} == '상담' ? 'active' ">header: 상담 관리</a></li>
+				<li><a href="#" th:href="@{/newconsult/list}" th:classappend="${menu} == '상담2' ? 'active' ">header: 상담 관리2</a></li>
 			</ul>
 		</nav>
 		<a href="/main.shtml" th:href="@{/}" class="logo">TAXNET&nbsp;<span>CUG</span></a>
@@ -112,6 +113,13 @@
 					th:classappend="@{side} == '상담' ? 'active' ">
 					<i class="fa fa-fw fa-bullhorn"></i>
 					<span>leftmenu: 상담</span>
+				</a>
+			</li>
+			<li class="">
+				<a href="/pages/BoardMgt/Notice/notice_List.shtml" th:href="@{/newconsult/list}"
+					th:classappend="@{side} == '상담2' ? 'active' ">
+					<i class="fa fa-fw fa-bullhorn"></i>
+					<span>leftmenu: 상담2</span>
 				</a>
 			</li>
 		</ul>
