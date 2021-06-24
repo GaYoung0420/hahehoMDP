@@ -8,6 +8,11 @@
 ## ignoring target file
 target/
 
+# files
+external/static/assets
+external/static/files
+external/static/img
+
 
 HELP.md
 target/
